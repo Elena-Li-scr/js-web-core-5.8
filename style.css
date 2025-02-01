@@ -43,7 +43,6 @@
 }
 
 .container {
-  max-width: 768px;
   font-family: "TT Lakes";
   margin: auto;
   overflow: scroll;
@@ -57,7 +56,22 @@
   border-bottom: 1px solid #d9fff5;
 }
 
-.header__icons {
+.header__left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header__right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__logo {
+  margin-left: 10px;
+}
+
+.icons {
   background-color: #ff3e79;
   border-radius: 20px;
   width: 40px;
@@ -65,14 +79,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.header__icons--hiden {
+.icons:first-child {
+  margin-left: 0px;
+}
+
+.icons--hiden {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .header__icons--hiden {
+  .icons--hiden {
     display: flex;
   }
 }
@@ -81,12 +101,20 @@
   height: 32px;
   border-right: 2px solid #eaeaea;
   margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .header__line--hiden {
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .header--hiden {
+    display: none;
   }
 }
 
@@ -103,15 +131,33 @@
   font-size: 28px;
 }
 
+.main__icons {
+  display: none;
+}
+
+.main__row {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .main__button {
-  width: 246px;
+  width: 248px;
   height: 40px;
+  margin: 20px;
+  color: #7e7e82;
+  font-size: 15px;
+  line-height: 16px;
+  padding: 10px;
+  display: block;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.main__button:hover {
   background-color: white;
   border: 2px solid #b8ffec;
   border-radius: 6px;
-  margin: 20px;
-  color: #7e7e82;
-  font-size: 16px;
 }
 
 .main__text {
@@ -123,12 +169,56 @@
   font-weight: 400;
 }
 
+.main__text--hidden {
+  display: none;
+}
+
 .main__img {
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .main__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .main__textPart {
+    width: 50%;
+  }
+
+  .main__imgPart {
+    width: 50%;
+  }
+
+  .main__text {
+    line-height: 20px;
+  }
+
+  .main__text--hidden {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .main__wrapLarge {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .main__iconText {
+    font-size: 16;
+    font-weight: 600;
+  }
+}
 .expand {
   height: 24px;
   display: flex;
